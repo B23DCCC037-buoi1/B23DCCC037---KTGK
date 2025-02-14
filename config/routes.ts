@@ -1,4 +1,5 @@
-﻿export default [
+﻿
+export default [
 	{
 		path: '/user',
 		layout: false,
@@ -35,6 +36,12 @@
 		name: 'RandomUser',
 		component: './RandomUser',
 		icon: 'ArrowsAltOutlined',
+	},
+	{
+		path: '/todo-list',
+		name: 'Todolist',
+		component: './Todolist',
+		icon: 'CheckSquareOutlined',
 	},
 
 	// DANH MUC HE THONG
