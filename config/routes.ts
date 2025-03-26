@@ -1,5 +1,4 @@
-﻿
-export default [
+﻿export default [
 	{
 		path: '/user',
 		layout: false,
@@ -38,12 +37,36 @@ export default [
 		icon: 'ArrowsAltOutlined',
 	},
 	{
-		path: '/todo-list',
-		name: 'Todolist',
-		component: './Todolist',
+		path: '/RockPaperScissors',
+		name: 'RockPaperScissors',
+		component: './RockPaperScissors',
+		icon: 'CheckSquareOutlined',
+	},
+	{
+		path: '/ProfileCard',
+		name: 'Profile Card',
+		component: './ProfileCard',
 		icon: 'CheckSquareOutlined',
 	},
 
+	// {
+	// 	path: '/question-management',
+	// 	name: 'Question-Management',
+	// 	component: './Question',
+	// 	icon: 'ReadOutlined',
+	// },
+	{
+		path: "/room-management",
+		layout: false,
+		name: "Room-Management",
+		icon: "HomeOutlined",
+		routes: [
+		  { path: "/room-management", component: "@/pages/Room/RoomManagement", exact: true },
+		  { path: "/room-management/list", name: "Quản lý Phòng", component: "@/pages/Room/RoomList" },
+		  { path: "/room-management/form", name: "Thêm/Sửa Phòng", component: "@/pages/Room/RoomForm" }
+		],
+	  },	  
+	  
 	// DANH MUC HE THONG
 	// {
 	// 	name: 'DanhMuc',
@@ -96,4 +119,5 @@ export default [
 	{
 		component: './exception/404',
 	},
+	
 ];
