@@ -87,6 +87,14 @@
 		icon: 'PushpinOutlined',
 	},
 
+	{
+		path: '/TaskManager',
+		name: 'TaskManager',
+		component: './TaskManager',
+		icon: 'PushpinOutlined',
+	},
+
+
 	// {
 	// 	path: '/question-management',
 	// 	name: 'Question-Management',
