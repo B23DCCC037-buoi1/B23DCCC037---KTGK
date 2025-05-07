@@ -1,22 +1,10 @@
-import { useState } from 'react';
-
-export default () => {
-	const [startLine, setStartLine] = useState<number>(0);
-	const [headLine, setHeadLine] = useState<Record<string, string>>(); // A: "Mã"
-	const [fileData, setFileData] = useState<Record<string, string>[]>(); // "Mã": "ABC"
-	const [matchedColumns, setMatchedColumns] = useState<Record<string, string>>(); // ma: "Mã"
-	const [dataImport, setDataImport] = useState<any[]>();
-
-	return {
-		startLine,
-		setStartLine,
-		headLine,
-		setHeadLine,
-		fileData,
-		setFileData,
-		matchedColumns,
-		setMatchedColumns,
-		dataImport,
-		setDataImport,
-	};
-};
+// 📁 src/models/Travel/import.ts
+export const travelTypes = ['Biển', 'Núi', 'Thành phố'];
+export interface Destination {
+	id: string;
+	name: string;
+	type: typeof travelTypes[number]; // Kiểu dữ liệu cho loại điểm đến, chỉ có thể là 'Biển', 'Núi', hoặc 'Thành phố'
+	price: number; // Giá là kiểu number
+	image: string;
+	rating: number;
+  }

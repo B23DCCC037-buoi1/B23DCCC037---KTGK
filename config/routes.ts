@@ -48,6 +48,44 @@
 		component: './ProfileCard',
 		icon: 'CheckSquareOutlined',
 	},
+	{
+		path: '/travel-itinerary',
+		layout: false,
+		name: 'Travel itinerary',
+		icon: 'ReadOutlined',
+		routes: [
+			{
+				path: '/travel-itinerary/statistical',
+				layout: true,
+				name: 'Trang chủ',
+				component: '@/pages/Travel/HomePage',
+			},
+			{
+				path: '/travel-itinerary/planner',
+				layout: true,
+				name: 'Lịch trình',
+				component: '@/pages/Travel/PlannerPage',
+			},
+			{
+				path: '/travel-itinerary/budget',
+				layout: true,
+				name: 'Ngân sách',
+				component: '@/pages/Travel/BudgetPage',
+			},
+			{
+				path: '/travel-itinerary/admin',
+				layout: true,
+				name: 'Admin',
+				component: '@/pages/Travel/AdminPage',
+			},
+		],
+	},
+	{
+		path: '/Note',
+		name: 'Note',
+		component: './Note',
+		icon: 'PushpinOutlined',
+	},
 
 	// {
 	// 	path: '/question-management',
@@ -55,17 +93,6 @@
 	// 	component: './Question',
 	// 	icon: 'ReadOutlined',
 	// },
-	{
-		path: "/room-management",
-		layout: false,
-		name: "Room-Management",
-		icon: "HomeOutlined",
-		routes: [
-		  { path: "/room-management", component: "@/pages/Room/RoomManagement", exact: true },
-		  { path: "/room-management/list", name: "Quản lý Phòng", component: "@/pages/Room/RoomList" },
-		  { path: "/room-management/form", name: "Thêm/Sửa Phòng", component: "@/pages/Room/RoomForm" }
-		],
-	  },	  
 	  
 	// DANH MUC HE THONG
 	// {
