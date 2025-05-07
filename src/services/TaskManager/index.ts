@@ -1,24 +1,29 @@
 import { Task } from '@/models/TaskManager/Task';
 
-const TASKS_KEY = 'tasks';
-const USER_KEY = 'currentUser';
-
-export const getTasks = (): Task[] => {
-  return JSON.parse(localStorage.getItem(TASKS_KEY) || '[]');
-};
-
-export const saveTasks = (tasks: Task[]) => {
-  localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
-};
+const TASKS_PREFIX = 'taskmanager_tasks_';
+const CURRENT_USER_KEY = 'taskmanager_current_user';
 
 export const getCurrentUser = (): string | null => {
-  return localStorage.getItem(USER_KEY);
+  return localStorage.getItem(CURRENT_USER_KEY);
 };
 
 export const setCurrentUser = (username: string) => {
-  localStorage.setItem(USER_KEY, username);
+  localStorage.setItem(CURRENT_USER_KEY, username);
 };
 
 export const logout = () => {
-  localStorage.removeItem(USER_KEY);
+  localStorage.removeItem(CURRENT_USER_KEY);
+};
+
+export const getTasks = (): Task[] => {
+  const user = getCurrentUser();
+  if (!user) return [];
+  const data = localStorage.getItem(TASKS_PREFIX + user);
+  return data ? JSON.parse(data) : [];
+};
+
+export const saveTasks = (tasks: Task[]) => {
+  const user = getCurrentUser();
+  if (!user) return;
+  localStorage.setItem(TASKS_PREFIX + user, JSON.stringify(tasks));
 };

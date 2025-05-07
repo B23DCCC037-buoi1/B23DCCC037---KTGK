@@ -43,6 +43,7 @@ const App: React.FC = () => {
   const handleLogin = (username: string) => {
     setCurrentUser(username);
     setUser(username);
+    setTasks(getTasks());
     justLoggedIn.current = true;
   };
 
